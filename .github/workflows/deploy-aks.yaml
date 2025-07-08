@@ -47,13 +47,13 @@ jobs:
         run: helm install ingress-nginx ingress-nginx/ingress-nginx || helm upgrade ingress-nginx ingress-nginx/ingress-nginx
 
       - name: Apply Kubernetes manifests - Deployment
-        run: kubectl apply -f K8S/Deployment/
+        run: kubectl apply -f Deploy/Deployment/task_dotnet.yaml
 
       - name: Apply Kubernetes manifests - Service
-        run: kubectl apply -f K8S/Service/
+        run: kubectl apply -f Deploy/Service/task_dotnet.yaml
 
       - name: Apply Kubernetes manifests - Ingress
-        run: kubectl apply -f K8S/Ingress/
+        run: kubectl apply -f Deploy/Ingress/task_dotnet.yaml
 
       - name: Check Pods
         run: kubectl get pods

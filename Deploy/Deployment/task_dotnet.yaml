@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: task-dotnet
-        image: wesleyab/task-dotnet:latest
+        image: wesleyab/todo_dotnet_core9.api:latest
         ports:
         - containerPort: 8080
 
