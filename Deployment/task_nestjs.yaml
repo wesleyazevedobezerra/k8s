@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-nestjs-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: task-nestjs
+  template:
+    metadata:
+      labels:
+        app: task-nestjs
+    spec:
+      containers:
+      - name: task-nestjs
+        image: wesleyab/task-nestjs:latest
+        ports:
+        - containerPort: 8080

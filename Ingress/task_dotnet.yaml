@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: task-dotnet-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /task-dotnet
+        pathType: Prefix
+        backend:
+          service:
+            name: task-dotnet-service
+            port:
+              number: 80

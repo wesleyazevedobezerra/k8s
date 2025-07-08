@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-node-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: task-node
+  template:
+    metadata:
+      labels:
+        app: task-node
+    spec:
+      containers:
+      - name: task-node
+        image: wesleyab/task-node:latest
+        ports:
+        - containerPort: 8080

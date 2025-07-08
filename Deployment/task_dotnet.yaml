@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-dotnet-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: task-dotnet
+  template:
+    metadata:
+      labels:
+        app: task-dotnet
+    spec:
+      containers:
+      - name: task-dotnet
+        image: wesleyab/task-dotnet:latest
+        ports:
+        - containerPort: 8080
+
