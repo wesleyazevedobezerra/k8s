@@ -1,4 +1,4 @@
-# Deploy Azure AKS e Kubernetes Resources com Terraform + Helm
+# Deploy Azure AKS
 name: Deploy AKS and Kubernetes Resources
 
 on:
