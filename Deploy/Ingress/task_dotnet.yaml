@@ -7,7 +7,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /task-dotnet
+      - path: /task-dotnet(/|$)(.*)
         pathType: Prefix
         backend:
           service:
