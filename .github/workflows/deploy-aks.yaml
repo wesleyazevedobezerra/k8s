@@ -61,6 +61,9 @@ jobs:
       - name: Apply Kubernetes manifests - Deployment
         run: kubectl apply -f Deploy/Deployment/task_dotnet.yaml
 
+      - name: Aguardar rollout completo do deployment
+        run: kubectl rollout status deployment task-dotnet-deployment --timeout=180s
+
       - name: Apply Kubernetes manifests - Service
         run: kubectl apply -f Deploy/Service/task_dotnet.yaml
 
