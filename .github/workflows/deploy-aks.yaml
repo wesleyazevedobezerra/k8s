@@ -82,3 +82,7 @@ jobs:
       - name: Terraform Destroy on failure
         if: failure()
         run: terraform -chdir=Deploy/Terraform destroy -auto-approve
+
+      - name: Delete NetworkWatcherRG on failure
+        if: failure()
+        run: az group delete --name NetworkWatcherRG --yes --no-wait
