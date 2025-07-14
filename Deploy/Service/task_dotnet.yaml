@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: task-dotnet-service
 spec:
+  type: LoadBalancer
   selector:
     app: task-dotnet
   ports:
   - port: 80
     targetPort: 8080
-  type: ClusterIP

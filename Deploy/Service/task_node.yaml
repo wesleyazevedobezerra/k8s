@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: task-node-service
 spec:
+  type: LoadBalancer
   selector:
     app: task-node
   ports:
   - port: 80
     targetPort: 8080
-  type: ClusterIP
