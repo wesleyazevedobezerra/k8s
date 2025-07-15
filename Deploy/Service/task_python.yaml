@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: task-python-service
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   selector:
     app: task-python
   ports:
   - port: 80
-    targetPort: 8080
+    targetPort: 8084

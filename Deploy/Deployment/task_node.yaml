@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: task-node
-        image: wesleyab/task-node:latest
+        image: wesleyab/netcore9:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8084
