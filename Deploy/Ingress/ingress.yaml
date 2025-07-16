@@ -2,45 +2,15 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: task-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /dotnet
+          - path: /
             pathType: Prefix
             backend:
               service:
                 name: task-dotnet-service
-                port:
-                  number: 80
-          - path: /golang
-            pathType: Prefix
-            backend:
-              service:
-                name: task-golang-service
-                port:
-                  number: 80
-          - path: /nestjs
-            pathType: Prefix
-            backend:
-              service:
-                name: task-nestjs-service
-                port:
-                  number: 80
-          - path: /node
-            pathType: Prefix
-            backend:
-              service:
-                name: task-node-service
-                port:
-                  number: 80
-          - path: /python
-            pathType: Prefix
-            backend:
-              service:
-                name: task-python-service
                 port:
                   number: 80
